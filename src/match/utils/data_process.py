@@ -6,7 +6,7 @@ from sklearn.preprocessing import LabelEncoder
 from tqdm import tqdm
 from collections import defaultdict
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from match.utils.feature_util import sparseFeature
+from src.match.utils.feature_util import sparseFeature
 
 
 def get_label(row):
@@ -19,7 +19,7 @@ def get_label(row):
 
 def create_ml_100k_dataset(embed_dim=16):
     """加载数据"""
-    base_path = '/home/mesie/python/recommend/recommend-learning/data/'
+    base_path = '../../../data/'
     rating_df = pd.read_csv(base_path + 'ml-100k/u.data', sep='\t',
                             names=['user_id', 'movie_id', 'rating', 'timestamp'])
 

@@ -2,9 +2,9 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.optimizers import Adam
 
-from match.youtube_dnn.model import YoutubeDNN
-from match.utils.data_process import create_ml_100k_dataset
-from match.utils.loss_util import sampledsoftmaxloss
+from src.match.youtube_dnn.model import YoutubeDNN
+from src.match.utils.data_process import create_ml_100k_dataset
+from src.match.utils.loss_util import sampledsoftmaxloss
 import os
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
@@ -12,8 +12,8 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 if __name__ == '__main__':
     # =============================== GPU ==============================
-    # gpu = tf.config.experimental.list_physical_devices(device_type='GPU')
-    # print(gpu)
+    gpu = tf.config.experimental.list_physical_devices(device_type='GPU')
+    print("gpu:", gpu)
     os.environ['CUDA_VISIBLE_DEVICES'] = '2, 3'
     # ========================= Hyper Parameters =======================
     embed_dim = 16

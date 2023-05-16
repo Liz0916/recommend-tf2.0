@@ -2,7 +2,7 @@ import tensorflow as tf
 from tensorflow.keras import Model
 from tensorflow.keras.regularizers import l2
 from tensorflow.keras.layers import Embedding, Dense, Input
-from match.layers.modules import DNN, SampledSoftmaxLayer
+from src.match.layers.modules import DNN, SampledSoftmaxLayer
 
 class YoutubeDNN(Model):
 
